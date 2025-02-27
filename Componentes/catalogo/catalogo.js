@@ -1,9 +1,8 @@
-import { dataProductos } from "./data.js";
-import {crearProducto} from "./Producto/producto.js"
+import { dataProductos } from "../../data.js";
+import { crearProducto } from "../Producto/producto.js";
 
-function cargarProductos() {
+export function cargarProductos() {
     const contenedor = document.getElementById("productos");
-    contenedor.innerHTML = "";
     dataProductos.forEach(producto => {
         contenedor.appendChild(crearProducto(producto));
     });

@@ -1,12 +1,15 @@
-function resaltarProducto(id) {
-    const producto = document.querySelector(`.producto[data-id='${id}']`);
-    producto.classList.toggle("resaltado");
+export function resaltarProducto(id) {
+    const producto = document.querySelector(`.producto[data-id="${id}"]`);
+    if (producto) {
+        producto.style.border = "2px solid yellow";
+        console.log(`Producto ${id} resaltado.`);
+    }
 }
 
-function eliminarProducto(id) {
-    const index = dataProductos.findIndex(p => p.id === id);
-    if (index !== -1) {
-        dataProductos.splice(index, 1);
-        cargarProductos();
+export function eliminarProducto(id) {
+    const producto = document.querySelector(`.producto[data-id="${id}"]`);
+    if (producto) {
+        producto.remove();
+        console.log(`Producto ${id} eliminado.`);
     }
 }
